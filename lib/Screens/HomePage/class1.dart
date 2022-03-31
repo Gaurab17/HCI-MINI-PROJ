@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hciminiproj/Screens/AttendanceReport.dart';
-import 'package:hciminiproj/Screens/captureimage.dart';
+import 'package:hciminiproj/Screens/HomePage/AttendanceReport.dart';
+import 'package:hciminiproj/Screens/HomePage/captureimage.dart';
+// import 'package:hciminiproj/Screens/captureimage.dart';
 
 import 'attendancehistory.dart';
 
@@ -29,7 +30,7 @@ class Selectedclass extends StatelessWidget {
               color: Colors.white,
               child: const Center(
                 child: Text(
-                  "Human Computer Interaction ",
+                  "Human Computer Interaction COMP 341",
                   style: TextStyle(
                       fontSize: 22,
                       fontWeight: FontWeight.bold,
@@ -99,7 +100,7 @@ class Selectedclass extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const AttendanceReport()));
+                            builder: (context) => const CaptureImage()));
                   }),
             ),
             const SizedBox(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hciminiproj/Screens/home.dart';
-import 'package:hciminiproj/Screens/register.dart';
+import 'package:hciminiproj/Screens/HomePage/home.dart';
+import 'package:hciminiproj/Screens/Authenticate/register.dart';
 
 class SignIn extends StatelessWidget {
   const SignIn({Key? key}) : super(key: key);

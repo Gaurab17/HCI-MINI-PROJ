@@ -1,5 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:hciminiproj/Screens/home.dart';
+import 'package:hciminiproj/Screens/HomePage/home.dart';
 
 class AttendanceReport extends StatelessWidget {
   const AttendanceReport({Key? key}) : super(key: key);
@@ -35,7 +37,7 @@ class AttendanceReport extends StatelessWidget {
           const Padding(
             padding: EdgeInsets.all(12.0),
             child: Text(
-              "Total Attendance : 30/40 days",
+              "Total Attendance : 4/6 days",
               style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,

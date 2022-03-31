@@ -18,7 +18,30 @@ class _HistoryState extends State<History> {
       body: Padding(
         padding: const EdgeInsets.all(12.0),
         child: ListView(
-          children: [_createDataTable()],
+          children: [
+            _createDataTable(),
+            const SizedBox(
+              height: 5,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Container(
+                height: 5,
+                color: Colors.black,
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            const Center(
+                child: Text(
+              "Total Attendance: 4/6",
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87),
+            ))
+          ],
         ),
       ),
     );
