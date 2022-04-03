@@ -9,7 +9,8 @@ class NoLiveClass extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("No Live Class"),
+        title: const Text("COMP 342"),
+        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
       ),
       body: Container(
@@ -33,15 +34,6 @@ class NoLiveClass extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const Absence()));
-              },
-              child: const Text(
-                "Send Reason of absence",
-                style: TextStyle(fontSize: 22),
-              )),
           const SizedBox(
             height: 20,
           ),

@@ -14,6 +14,7 @@ class Selectedclass extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text("COMP 341"),
+        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
         elevation: 0.0,
       ),

@@ -5,6 +5,7 @@ import 'package:hciminiproj/Screens/HomePage/noLiveclass.dart';
 
 class Classes extends StatelessWidget {
   final bool value;
+
   const Classes({Key? key, required this.value}) : super(key: key);
 
   @override
@@ -12,6 +13,7 @@ class Classes extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("My Classes"),
+          backgroundColor: const Color.fromARGB(255, 6, 200, 142),
           centerTitle: true,
         ),
         body: Padding(
@@ -56,11 +58,11 @@ class Classes extends StatelessWidget {
                       ),
                     ),
                     onTap: () {
-                      if (value) {
+                      if (value == false) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => const CaptureImage()));
+                                builder: (context) => const Selectedclass()));
                       } else {
                         final snackBar = SnackBar(
                           backgroundColor:

@@ -18,7 +18,7 @@ class SignUp extends StatelessWidget {
               ),
               Center(
                 child: Image.asset(
-                  'assets/images/mobile.gif',
+                  'assets/images/signup.gif',
                   height: 300,
                   width: 300,
                 ),

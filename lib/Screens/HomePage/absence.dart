@@ -7,7 +7,8 @@ class Absence extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Comp 314"),
+        title: const Text("Leave Application"),
+        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
       ),
       body: Container(
