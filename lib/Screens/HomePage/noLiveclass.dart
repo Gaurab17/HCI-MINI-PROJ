@@ -9,7 +9,7 @@ class NoLiveClass extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COMP 342"),
+        title: const Text("COMP 314"),
         backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
       ),
@@ -20,15 +20,79 @@ class NoLiveClass extends StatelessWidget {
         // ignore: prefer_const_literals_to_create_immutables
         child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
           const SizedBox(
+            height: 20,
+          ),
+          Container(
+            height: 65,
+            width: MediaQuery.of(context).size.width / 1.2,
+            color: Colors.white,
+            child: const Center(
+              child: Text(
+                "Algorithm And Complexity COMP 314",
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black),
+              ),
+            ),
+          ),
+          Container(
+            height: 30,
+            width: MediaQuery.of(context).size.width / 1.2,
+            color: Colors.white,
+            child: const Center(
+              child: Padding(
+                padding: EdgeInsets.only(left: 88.0),
+                child: Text(
+                  "-By Rajani Chulyadyo",
+                  style: TextStyle(
+                      fontSize: 22,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(
             height: 60,
           ),
-          const Padding(
-            padding: EdgeInsets.all(50.0),
-            child: Text(
-              "No Live Class Detected. Please try again at the class hour",
-              style: TextStyle(
-                  fontSize: 24, fontWeight: FontWeight.bold, color: Colors.red),
-              textAlign: TextAlign.center,
+          Container(
+            decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.all(
+                Radius.circular(12),
+              ),
+              image: DecorationImage(
+                fit: BoxFit.fill,
+                opacity: 0.2,
+                image: NetworkImage(
+                    "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+              ),
+              boxShadow: [
+                //background color of box
+                BoxShadow(
+                  color: Color.fromARGB(255, 188, 177, 176),
+                  blurRadius: 10.0, // soften the shadow
+                  spreadRadius: 1.0, //extend the shadow
+                  offset: Offset(
+                    0.0, // Move to right 10  horizontally
+                    0.0, // Move to bottom 10 Vertically
+                  ),
+                )
+              ],
+            ),
+            height: MediaQuery.of(context).size.height / 3.5,
+            width: MediaQuery.of(context).size.width / 1.2,
+            child: const Padding(
+              padding: EdgeInsets.all(50.0),
+              child: Text(
+                "No Live Class Detected. Please try again at the class hour",
+                style: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           const SizedBox(
@@ -38,6 +102,12 @@ class NoLiveClass extends StatelessWidget {
             height: 20,
           ),
           ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 9, 162, 144),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+              ),
               onPressed: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => const History()));

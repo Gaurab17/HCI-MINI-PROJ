@@ -10,7 +10,7 @@ class CaptureImage extends StatefulWidget {
 
 class _CaptureImageState extends State<CaptureImage> {
   bool imageCapture = false;
-  var timeStamp = DateTime.now();
+  var timeStamp = DateTime.now().toString().substring(0, 10);
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +65,12 @@ class _CaptureImageState extends State<CaptureImage> {
           height: 20,
         ),
         ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: const Color.fromARGB(255, 9, 162, 144),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(16.0),
+              ),
+            ),
             onPressed: () {
               if (imageCapture) {
                 Navigator.push(
@@ -73,34 +79,20 @@ class _CaptureImageState extends State<CaptureImage> {
                         builder: (context) => const AttendanceReport()));
               } else {
                 final snackBar = SnackBar(
-                  backgroundColor: const Color.fromARGB(255, 20, 45, 65),
-                  content: Text(
-                    'Face Atrtendance Error, at : $timeStamp ',
-                    style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.red),
+                  backgroundColor: const Color.fromARGB(255, 15, 215, 122),
+                  content: Padding(
+                    padding: const EdgeInsets.only(left: 76.0),
+                    child: Text(
+                      'Face Attendance Error, Emailed at : $timeStamp ',
+                      style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Color.fromARGB(255, 201, 196, 196)),
+                    ),
                   ),
                   action: SnackBarAction(
-                    label: 'Email',
-                    onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Container(
-                            decoration: BoxDecoration(
-                                color: const Color.fromARGB(255, 235, 4, 4),
-                                border:
-                                    Border.all(width: 2.0, color: Colors.black),
-                                borderRadius: BorderRadius.circular(20)),
-                            margin: const EdgeInsets.fromLTRB(0, 0, 0, 75),
-                            child: const Padding(
-                              padding: EdgeInsets.all(8.0),
-                              child: Text('Emailed to Instructor!'),
-                            ),
-                          ),
-                          backgroundColor: Colors.transparent,
-                          elevation: 1000,
-                          behavior: SnackBarBehavior.floating));
-                    },
+                    label: '',
+                    onPressed: () {},
                   ),
                 );
 

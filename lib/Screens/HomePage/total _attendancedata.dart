@@ -22,13 +22,13 @@ class _TotalAttendanceState extends State<TotalAttendance> {
           children: [
             _createDataTable(),
             const SizedBox(
-              height: 5,
+              height: 10,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Container(
-                height: 5,
-                color: Colors.black,
+                height: 3,
+                color: const Color.fromARGB(255, 54, 53, 53),
               ),
             ),
             const SizedBox(

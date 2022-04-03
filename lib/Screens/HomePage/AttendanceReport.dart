@@ -51,8 +51,8 @@ class AttendanceReport extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: SizedBox(
-              width: MediaQuery.of(context).size.width / 1.5,
-              height: 50,
+              width: MediaQuery.of(context).size.width / 1.7,
+              height: 40,
               child: ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
@@ -61,12 +61,12 @@ class AttendanceReport extends StatelessWidget {
                 child: const Text(
                   'Back To Home Page',
                   style: TextStyle(
-                      fontSize: 25,
+                      fontSize: 20,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
                 style: ElevatedButton.styleFrom(
-                  side: const BorderSide(width: 2.0, color: Colors.blue),
+                  primary: const Color.fromARGB(255, 9, 162, 144),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16.0),
                   ),

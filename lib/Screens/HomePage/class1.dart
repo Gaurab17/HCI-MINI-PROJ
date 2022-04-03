@@ -62,8 +62,8 @@ class Selectedclass extends StatelessWidget {
             Center(
               child: Image.asset(
                 'assets/images/wifi.gif',
-                height: 250,
-                width: 250,
+                height: 200,
+                width: 200,
               ),
             ),
             const Text(
@@ -80,7 +80,7 @@ class Selectedclass extends StatelessWidget {
               height: 65,
               width: MediaQuery.of(context).size.width / 1.2,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 86, 171, 240),
+                color: const Color.fromARGB(255, 9, 162, 144),
                 border: Border.all(
                   color: const Color.fromARGB(255, 45, 102, 247),
                   width: 0.4,
@@ -89,13 +89,16 @@ class Selectedclass extends StatelessWidget {
                 //BoxShadow
               ),
               child: ListTile(
-                  leading: const Icon(Icons.book),
+                  leading: const Icon(
+                    Icons.book,
+                    color: Colors.white,
+                  ),
                   title: const Text(
                     "Do Attendance",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                        color: Color.fromARGB(255, 226, 222, 222)),
                   ),
                   onTap: () {
                     Navigator.push(
@@ -111,7 +114,7 @@ class Selectedclass extends StatelessWidget {
               height: 65,
               width: MediaQuery.of(context).size.width / 1.2,
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 86, 171, 240),
+                color: const Color.fromARGB(255, 9, 162, 144),
                 border: Border.all(
                   color: const Color.fromARGB(255, 45, 102, 247),
                   width: 0.4,
@@ -120,13 +123,16 @@ class Selectedclass extends StatelessWidget {
                 //BoxShadow
               ),
               child: ListTile(
-                  leading: const Icon(Icons.book),
+                  leading: const Icon(
+                    Icons.book,
+                    color: Colors.white,
+                  ),
                   title: const Text(
                     "Attendance History",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
-                        color: Colors.black),
+                        color: Color.fromARGB(255, 226, 222, 222)),
                   ),
                   onTap: () {
                     Navigator.push(

@@ -6,6 +6,8 @@ import 'package:hciminiproj/Screens/HomePage/Classes.dart';
 import 'package:hciminiproj/Screens/Authenticate/login.dart';
 import 'package:hciminiproj/Screens/HomePage/noLiveclass.dart';
 import 'package:hciminiproj/Screens/HomePage/total%20_attendancedata.dart';
+import 'package:hciminiproj/Screens/Routine/routine.dart';
+import 'package:hciminiproj/Screens/SuppportUI/help.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -66,7 +68,18 @@ class _HomeState extends State<Home> {
             ListTile(
               title: const Text('Help'),
               leading: const Icon(Icons.help),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Help()));
+              },
+            ),
+            ListTile(
+              title: const Text('My Schedule'),
+              leading: const Icon(Icons.class__rounded),
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Routine()));
+              },
             ),
             ListTile(
               title: const Text('Language'),
@@ -183,16 +196,19 @@ class _HomeState extends State<Home> {
                         } else {
                           final snackBar = SnackBar(
                             backgroundColor:
-                                const Color.fromARGB(255, 20, 45, 65),
-                            content: const Text(
-                              'Connect the VPN to join the Live class!',
-                              style: TextStyle(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.red),
+                                const Color.fromARGB(255, 15, 215, 122),
+                            content: const Padding(
+                              padding: EdgeInsets.only(left: 40.0),
+                              child: Text(
+                                'Connect the VPN to attend the Live class!',
+                                style: TextStyle(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 255, 255, 255)),
+                              ),
                             ),
                             action: SnackBarAction(
-                              label: 'Undo',
+                              label: '',
                               onPressed: () {
                                 // Some code to undo the change.
                               },
