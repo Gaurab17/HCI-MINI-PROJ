@@ -2,9 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/home.dart';
 import 'package:hciminiproj/Screens/Authenticate/register.dart';
 
-class SignIn extends StatelessWidget {
+class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
 
+  @override
+  State<SignIn> createState() => _SignInState();
+}
+
+String email = "";
+String password = "";
+String error = "";
+
+class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +47,11 @@ class SignIn extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 12.0, right: 12),
                 child: TextFormField(
-                  onChanged: (val) {},
+                  onChanged: (val) {
+                    setState(() {
+                      email = val;
+                    });
+                  },
                   decoration: InputDecoration(
                       hintText: 'Student Email ',
                       border: OutlineInputBorder(
@@ -54,7 +67,11 @@ class SignIn extends StatelessWidget {
                   validator: (val) =>
                       val!.length < 6 ? 'Enter chars more than 6' : null,
                   obscureText: true,
-                  onChanged: (val) {},
+                  onChanged: (val) {
+                    setState(() {
+                      password = val;
+                    });
+                  },
                   decoration: InputDecoration(
                       hintText: 'Password ',
                       border: OutlineInputBorder(
@@ -72,7 +89,7 @@ class SignIn extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w900,
-                          color: Color(0xFF0724fa)),
+                          color: Color.fromARGB(255, 8, 144, 60)),
                     ),
                   ),
                   onTap: () {}),
@@ -84,10 +101,17 @@ class SignIn extends StatelessWidget {
                   height: 50,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Home()));
+                      if (email == "gaurab@gmail.com" && password == "123456") {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Home()));
+                      } else if (email != "gaurab@gmail.com" &&
+                          password != "123456") {
+                        setState(() {
+                          error = 'Enter valid data';
+                        });
+                      }
                     },
                     child: const Text(
                       'Login',
@@ -97,7 +121,7 @@ class SignIn extends StatelessWidget {
                           color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      side: const BorderSide(width: 2.0, color: Colors.blue),
+                      primary: const Color.fromARGB(255, 9, 162, 144),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
@@ -106,10 +130,12 @@ class SignIn extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 16,
+                height: 4,
               ),
-              // Text(error, style: const TextStyle(color: Colors.red)),
-
+              Text(error, style: const TextStyle(color: Colors.red)),
+              const SizedBox(
+                height: 4,
+              ),
               const Text(
                 "Doesn't have an account?",
                 style: TextStyle(
@@ -128,7 +154,7 @@ class SignIn extends StatelessWidget {
                   style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w900,
-                      color: Color(0xFF0724fa)),
+                      color: Color.fromARGB(255, 8, 144, 60)),
                 ),
                 onTap: () {
                   Navigator.push(context,

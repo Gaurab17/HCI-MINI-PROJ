@@ -16,7 +16,7 @@ class _CaptureImageState extends State<CaptureImage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Face Scanner"),
+        title: const Text("COMP 341"),
         backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
       ),
@@ -87,7 +87,7 @@ class _CaptureImageState extends State<CaptureImage> {
                       style: const TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 201, 196, 196)),
+                          color: Color.fromARGB(255, 255, 247, 247)),
                     ),
                   ),
                   action: SnackBarAction(

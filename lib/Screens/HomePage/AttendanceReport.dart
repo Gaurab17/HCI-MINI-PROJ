@@ -10,7 +10,7 @@ class AttendanceReport extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Attendance Status"),
+        title: const Text("COMP 341"),
         backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
         elevation: 0.0,

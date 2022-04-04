@@ -84,7 +84,7 @@ class SignUp extends StatelessWidget {
                           color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      side: const BorderSide(width: 2.0, color: Colors.blue),
+                      primary: const Color.fromARGB(255, 9, 162, 144),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
@@ -111,7 +111,7 @@ class SignUp extends StatelessWidget {
                   style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w900,
-                      color: Color(0xFF0724fa)),
+                      color: Color.fromARGB(255, 8, 144, 60)),
                 ),
                 onTap: () {
                   Navigator.push(context,

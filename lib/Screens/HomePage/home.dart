@@ -106,8 +106,7 @@ class _HomeState extends State<Home> {
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
           image: DecorationImage(
-            image: NetworkImage(
-                "https://images.unsplash.com/photo-1619252584172-a83a949b6efd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHdoaXRlJTIwYmFja2dyb3VuZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"),
+            image: AssetImage("assets/images/2.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -128,8 +127,7 @@ class _HomeState extends State<Home> {
                           image: DecorationImage(
                             fit: BoxFit.fill,
                             opacity: 0.2,
-                            image: NetworkImage(
-                                "https://media.istockphoto.com/photos/pile-of-catalogs-a4-picture-id841208328?k=20&m=841208328&s=612x612&w=0&h=i9wllEaE-tUlKEQknnEaaBduUgx3dc95j6zIffAYJp0="),
+                            image: AssetImage("assets/images/1.jpg"),
                           ),
                           boxShadow: [
                             //background color of box
@@ -232,8 +230,7 @@ class _HomeState extends State<Home> {
                           image: DecorationImage(
                             fit: BoxFit.fill,
                             opacity: 0.2,
-                            image: NetworkImage(
-                                "https://media.istockphoto.com/photos/blank-book-picture-id153085128?b=1&k=20&m=153085128&s=170667a&w=0&h=S0IpR3XjXy-ji6KVi70nmFA6m4d6nzZVbhvukIrgY5c="),
+                            image: AssetImage("assets/images/3.jpg"),
                           ),
                           boxShadow: [
                             //background color of box
@@ -306,8 +303,7 @@ class _HomeState extends State<Home> {
                         image: DecorationImage(
                           fit: BoxFit.fill,
                           opacity: 0.2,
-                          image: NetworkImage(
-                              "https://media.istockphoto.com/photos/blank-book-picture-id175547433?k=20&m=175547433&s=612x612&w=0&h=uWDMY1-N9TDn6jhWkdGiPygKVlQEMgdGZT03cglMkfI="),
+                          image: AssetImage("assets/images/4.jpg"),
                         ),
                         boxShadow: [
                           //background color of box
@@ -375,8 +371,7 @@ class _HomeState extends State<Home> {
                         image: DecorationImage(
                           fit: BoxFit.fill,
                           opacity: 0.2,
-                          image: NetworkImage(
-                              "https://images.unsplash.com/photo-1527176930608-09cb256ab504?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9va3MlMjB3aGl0ZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60"),
+                          image: AssetImage("assets/images/5.jpg"),
                         ),
                         boxShadow: [
                           //background color of box

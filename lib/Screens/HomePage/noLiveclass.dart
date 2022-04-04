@@ -1,5 +1,6 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:hciminiproj/Screens/HomePage/absence.dart';
 import 'package:hciminiproj/Screens/HomePage/attendancehistory.dart';
 
 class NoLiveClass extends StatelessWidget {
@@ -65,8 +66,7 @@ class NoLiveClass extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.fill,
                 opacity: 0.2,
-                image: NetworkImage(
-                    "https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8d2hpdGUlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"),
+                image: AssetImage("2.jpg"),
               ),
               boxShadow: [
                 //background color of box
