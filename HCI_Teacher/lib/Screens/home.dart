@@ -52,7 +52,7 @@ class Home extends StatelessWidget {
                       )
                     ],
                   ),
-                  height: MediaQuery.of(context).size.height / 5,
+                  height: MediaQuery.of(context).size.height / 5.5,
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 20),
@@ -129,7 +129,7 @@ class Home extends StatelessWidget {
                       )
                     ],
                   ),
-                  height: MediaQuery.of(context).size.height / 5,
+                  height: MediaQuery.of(context).size.height / 5.5,
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 20),
@@ -201,7 +201,7 @@ class Home extends StatelessWidget {
                       )
                     ],
                   ),
-                  height: MediaQuery.of(context).size.height / 5,
+                  height: MediaQuery.of(context).size.height / 5.5,
                   width: MediaQuery.of(context).size.width / 1.1,
                   child: Padding(
                     padding: const EdgeInsets.only(top: 20),

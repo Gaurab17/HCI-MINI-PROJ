@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hciteacher/Screens/ErrorStd.dart';
-import 'package:hciteacher/Screens/absentdata.dart';
-import 'package:hciteacher/Screens/attendancedata.dart';
-import 'package:hciteacher/Support/const.dart';
+
 
 class ErrorAttendance extends StatelessWidget {
   const ErrorAttendance({Key? key}) : super(key: key);
@@ -11,168 +9,70 @@ class ErrorAttendance extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COMP 341-Attendance Error"),
+        title: const Text('COMP 341 - Error Data'),
+        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
-        backgroundColor: topColor,
       ),
-      body: Column(
-        children: [
-          const SizedBox(
-            height: 38,
-          ),
-          const Text(
-            "Total 3 Attendance Errors",
-            style: TextStyle(
-                fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black),
-          ),
-          const SizedBox(
-            height: 30,
-          ),
-          GestureDetector(
-              child: Center(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(12),
-                    ),
-                    boxShadow: [
-                      //background color of box
-                      BoxShadow(
-                        color: Color.fromARGB(255, 188, 177, 176),
-                        blurRadius: 10.0, // soften the shadow
-                        spreadRadius: 1.0, //extend the shadow
-                        offset: Offset(
-                          0.0, // Move to right 10  horizontally
-                          0.0, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ],
-                  ),
-                  height: MediaQuery.of(context).size.height / 13,
-                  width: MediaQuery.of(context).size.width / 1.4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 14),
-                    child: Column(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: Text(
-                            "Sajan Mahat",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(221, 21, 20, 20)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: ListView(
+          children: [
+            GestureDetector(
+              child: _createDataTable(),
               onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ErrorImage()));
-              }),
-          const SizedBox(
-            height: 18,
-          ),
-          GestureDetector(
-              child: Center(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(12),
-                    ),
-                    boxShadow: [
-                      //background color of box
-                      BoxShadow(
-                        color: Color.fromARGB(255, 188, 177, 176),
-                        blurRadius: 10.0, // soften the shadow
-                        spreadRadius: 1.0, //extend the shadow
-                        offset: Offset(
-                          0.0, // Move to right 10  horizontally
-                          0.0, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ],
-                  ),
-                  height: MediaQuery.of(context).size.height / 13,
-                  width: MediaQuery.of(context).size.width / 1.4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 14),
-                    child: Column(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 8.0),
-                          child: Text(
-                            "Nripesh Karmacharya",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(221, 21, 20, 20)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              onTap: () {}),
-          const SizedBox(
-            height: 18,
-          ),
-          GestureDetector(
-              child: Center(
-                child: Container(
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(12),
-                    ),
-                    boxShadow: [
-                      //background color of box
-                      BoxShadow(
-                        color: Color.fromARGB(255, 188, 177, 176),
-                        blurRadius: 10.0, // soften the shadow
-                        spreadRadius: 1.0, //extend the shadow
-                        offset: Offset(
-                          0.0, // Move to right 10  horizontally
-                          0.0, // Move to bottom 10 Vertically
-                        ),
-                      )
-                    ],
-                  ),
-                  height: MediaQuery.of(context).size.height / 13,
-                  width: MediaQuery.of(context).size.width / 1.4,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 14),
-                    child: Column(
-                      // ignore: prefer_const_literals_to_create_immutables
-                      children: [
-                        const Padding(
-                          padding: EdgeInsets.only(bottom: 8.0, left: 12),
-                          child: Text(
-                            "Sabin Thapa",
-                            style: TextStyle(
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                                color: Color.fromARGB(221, 21, 20, 20)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              onTap: () {}),
-        ],
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const ErrorImage()));
+              },
+            ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Padding(
+              padding: EdgeInsets.all(18.0),
+              child: Text(
+                  "Click the name of the student to do the attendance correctly.", style: TextStyle(
+                    fontSize: 16, 
+                  ),),
+            )
+          ],
+        ),
       ),
     );
+  }
+
+  DataTable _createDataTable() {
+    return DataTable(columns: _createColumns(), rows: _createRows());
+  }
+
+  List<DataColumn> _createColumns() {
+    return [
+      const DataColumn(
+          label: Text(
+        'Name',
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      )),
+      const DataColumn(
+          label: Text(
+        'Roll No',
+        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+      ))
+    ];
+  }
+
+  List<DataRow> _createRows() {
+    return [
+      const DataRow(cells: [
+        DataCell(Text(
+          'Saazan Mahat',
+          style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
+        )),
+        DataCell(Text(
+          '1',
+          style: TextStyle(
+              color: Colors.red, fontSize: 17, fontWeight: FontWeight.normal),
+        ))
+      ]),
+      
+    ];
   }
 }

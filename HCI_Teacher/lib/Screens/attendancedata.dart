@@ -12,7 +12,7 @@ class _AttendanceDataState extends State<AttendanceData> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('COMP 341'),
+        title: const Text('COMP 341-2078/12/03'),
         backgroundColor: const Color.fromARGB(255, 6, 200, 142),
         centerTitle: true,
       ),
@@ -84,9 +84,9 @@ class _AttendanceDataState extends State<AttendanceData> {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Text(
-          'present',
+          'error',
           style: TextStyle(
-              color: Colors.green, fontSize: 17, fontWeight: FontWeight.normal),
+              color: Colors.red, fontSize: 17, fontWeight: FontWeight.normal),
         ))
       ]),
       const DataRow(cells: [
