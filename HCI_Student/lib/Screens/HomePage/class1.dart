@@ -5,9 +5,15 @@ import 'package:hciminiproj/Screens/HomePage/captureimage.dart';
 
 import 'attendancehistory.dart';
 
-class Selectedclass extends StatelessWidget {
+class Selectedclass extends StatefulWidget {
   const Selectedclass({Key? key}) : super(key: key);
 
+  @override
+  State<Selectedclass> createState() => _SelectedclassState();
+}
+
+class _SelectedclassState extends State<Selectedclass> {
+  bool vpn = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -43,42 +49,63 @@ class Selectedclass extends StatelessWidget {
               height: 30,
               width: MediaQuery.of(context).size.width / 1.2,
               color: Colors.white,
-              child: const Center(
-                child: Padding(
-                  padding: EdgeInsets.only(left: 88.0),
-                  child: Text(
-                    "-By Sushil Shrestha",
-                    style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.normal,
-                        color: Colors.black),
-                  ),
-                ),
+              child: const Text(
+                "-By Sushil Shrestha",
+                style: TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.black),
               ),
             ),
             const SizedBox(
               height: 8,
             ),
-            Center(
-              child: Image.asset(
-                'assets/images/wifi.gif',
-                height: 200,
-                width: 200,
-              ),
-            ),
-            const Text(
-              "Connected",
-              style: TextStyle(
-                  fontSize: 25,
+             
+            Column(
+              children: [
+                Center(
+                child: vpn ? Image.asset('assets/images/wifi.gif',height: 200,
+                  width: 200,) : Image.asset('assets/images/nowifi.jpg',height: 200,
+                  width: 200,), 
+                ),
+             Text( 
+              vpn? " Connected": "Not Connected",
+              style: const TextStyle(
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: Colors.green),
+                  color: Color.fromARGB(255, 43, 38, 38),
+                  ),
+            ),
+              ],
             ),
             const SizedBox(
               height: 20,
             ),
+            Padding(
+               padding: const EdgeInsets.only(left:8.0),
+               child: SwitchListTile(
+                          title: const Text(
+                            "Connect to the VPN",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromARGB(221, 30, 29, 29)),
+                          ),
+                          activeColor: Colors.teal,
+                          activeTrackColor: Colors.green,
+                          value: vpn,
+                          onChanged: (value) {
+                            setState(() {
+                              vpn = value;
+                            });
+                          }),
+             ),
+             const SizedBox(
+              height: 20,
+            ),
             Container(
-              height: 65,
-              width: MediaQuery.of(context).size.width / 1.2,
+              height: 60,
+              width: MediaQuery.of(context).size.width / 1.3,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 9, 162, 144),
                 border: Border.all(
@@ -101,18 +128,46 @@ class Selectedclass extends StatelessWidget {
                         color: Color.fromARGB(255, 226, 222, 222)),
                   ),
                   onTap: () {
-                    Navigator.push(
+                    if(vpn){
+                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const CaptureImage()));
+                    } else{
+                      final snackBar = SnackBar(
+                    backgroundColor:  Colors.red,
+                    content: const SizedBox(
+                      height: 40.0,
+                        child:Padding(
+                      padding:  EdgeInsets.only(left:60.0),
+                      child:  Text(
+                        'Connect the vpn to do attendance.',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 255, 255, 255)),
+                      ),
+                    ),),
+                  
+                    duration: const Duration(milliseconds: 1500), 
+                    action: SnackBarAction(
+                      label: '',
+                      onPressed: () {
+                         
+                      },
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                    } 
                   }),
             ),
             const SizedBox(
               height: 16,
             ),
             Container(
-              height: 65,
-              width: MediaQuery.of(context).size.width / 1.2,
+              height: 60,
+              width: MediaQuery.of(context).size.width / 1.3,
               decoration: BoxDecoration(
                 color: const Color.fromARGB(255, 9, 162, 144),
                 border: Border.all(
@@ -140,9 +195,6 @@ class Selectedclass extends StatelessWidget {
                         MaterialPageRoute(
                             builder: (context) => const History()));
                   }),
-            ),
-            const SizedBox(
-              height: 16,
             ),
           ]),
         ),

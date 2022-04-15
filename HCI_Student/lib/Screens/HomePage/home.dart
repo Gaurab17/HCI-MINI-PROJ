@@ -186,37 +186,13 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       onTap: () {
-                        if (vpn) {
+                        
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => const Selectedclass()));
-                        } else {
-                          final snackBar = SnackBar(
-                            backgroundColor:
-                                const Color.fromARGB(255, 15, 215, 122),
-                            content: const Padding(
-                              padding: EdgeInsets.only(left: 40.0),
-                              child: Text(
-                                'Connect the VPN to attend the Live class!',
-                                style: TextStyle(
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 255, 255, 255)),
-                              ),
-                            ),
-                            action: SnackBarAction(
-                              label: '',
-                              onPressed: () {
-                                // Some code to undo the change.
-                              },
-                            ),
-                          );
-
-                          ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
-                        ;
-                      }),
+                      ),
                 ),
                 GestureDetector(
                   child: Padding(
@@ -430,32 +406,6 @@ class _HomeState extends State<Home> {
             const SizedBox(
               height: 20,
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: SizedBox(
-                height: 50,
-                child: ListView(
-                  children: [
-                    SwitchListTile(
-                        title: const Text(
-                          "Connect to the VPN",
-                          style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Color.fromARGB(221, 30, 29, 29)),
-                        ),
-                        activeColor: Colors.teal,
-                        activeTrackColor: Colors.green,
-                        value: vpn,
-                        onChanged: (value) {
-                          setState(() {
-                            vpn = value;
-                          });
-                        }),
-                  ],
-                ),
-              ),
-            )
           ],
         ),
       ),

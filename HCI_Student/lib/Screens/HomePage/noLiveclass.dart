@@ -41,17 +41,12 @@ class NoLiveClass extends StatelessWidget {
             height: 30,
             width: MediaQuery.of(context).size.width / 1.2,
             color: Colors.white,
-            child: const Center(
-              child: Padding(
-                padding: EdgeInsets.only(left: 88.0),
-                child: Text(
-                  "-By Rajani Chulyadyo",
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontWeight: FontWeight.normal,
-                      color: Colors.black),
-                ),
-              ),
+            child: const Text(
+              "-By Rajani Chulyadyo",
+              style: TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.black),
             ),
           ),
           const SizedBox(

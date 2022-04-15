@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hciminiproj/Screens/HomePage/home.dart';
 import 'package:hciminiproj/Screens/SuppportUI/dropdown.dart';
 
 class Absence extends StatelessWidget {
@@ -57,28 +58,35 @@ class Absence extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                 ),
+                
                 onPressed: () {
                   final snackBar = SnackBar(
                     backgroundColor: const Color.fromARGB(255, 15, 215, 122),
                     content: const Padding(
-                      padding: EdgeInsets.only(left: 120.0),
-                      child: Text(
-                        'Email Sent',
+                      padding:  EdgeInsets.only(left:60.0),
+                      child:  Text(
+                        'Application Sent',
+                        textAlign: TextAlign.center,
                         style: TextStyle(
-                            fontSize: 24,
+                            fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 255, 255, 255)),
                       ),
                     ),
+                    duration: const Duration(milliseconds: 1000), 
                     action: SnackBarAction(
                       label: '',
                       onPressed: () {
-                        // Some code to undo the change.
+                         
                       },
                     ),
                   );
-
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Home()));
                 },
                 child: const Text("Send Message"))
           ],

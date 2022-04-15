@@ -79,23 +79,28 @@ class _CaptureImageState extends State<CaptureImage> {
                         builder: (context) => const AttendanceReport()));
               } else {
                 final snackBar = SnackBar(
-                  backgroundColor: const Color.fromARGB(255, 15, 215, 122),
-                  content: Padding(
-                    padding: const EdgeInsets.only(left: 76.0),
-                    child: Text(
-                      'Face Attendance Error, Emailed at : $timeStamp ',
-                      style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 255, 247, 247)),
-                    ),
-                  ),
+                  backgroundColor: Colors.red,
+                  content: SizedBox(
+                      height: 40.0,
+                        child:Padding(
+                      padding:  const EdgeInsets.only(left:60.0),
+                      child:  Text(
+                        'Face Attendance Error, Emailed at : $timeStamp',
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 255, 255, 255)),
+                      ),
+                    ),),
+                  
+            
+                  duration: const Duration(milliseconds: 1500),
                   action: SnackBarAction(
                     label: '',
                     onPressed: () {},
                   ),
                 );
-
                 ScaffoldMessenger.of(context).showSnackBar(snackBar);
               }
             },

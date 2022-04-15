@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hciminiproj/Screens/HomePage/home.dart';
 
 class History extends StatefulWidget {
   const History({Key? key}) : super(key: key);
@@ -41,10 +42,35 @@ class _HistoryState extends State<History> {
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Colors.black87),
-            ))
+            )),
+            const SizedBox(height: 20,),
+            Padding(
+              padding: const EdgeInsets.all(38.0),
+              child: ElevatedButton(
+                
+              style: ElevatedButton.styleFrom(
+                primary: const Color.fromARGB(255, 9, 162, 144),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+              ),
+              onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Home()));
+                } ,
+              child: const Text(
+                "Back To Home Page",
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+              )),
+            ),
           ],
         ),
       ),
+      
     );
   }
 
