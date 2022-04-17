@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hciteacher/Screens/ErrorStd.dart';
-
+import 'package:hciteacher/Support/const.dart';
 
 class ErrorAttendance extends StatelessWidget {
   const ErrorAttendance({Key? key}) : super(key: key);
@@ -10,31 +10,47 @@ class ErrorAttendance extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('COMP 341 - Error Data'),
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(18.0),
-        child: ListView(
-          children: [
-            GestureDetector(
-              child: _createDataTable(),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const ErrorImage()));
-              },
-            ),
-            const SizedBox(
-              height: 15,
-            ),
-            const Padding(
-              padding: EdgeInsets.all(18.0),
-              child: Text(
-                  "Click the name of the student to do the attendance correctly.", style: TextStyle(
-                    fontSize: 16, 
-                  ),),
-            )
-          ],
+      body: Container(
+        color: background,
+        child: Padding(
+          padding: const EdgeInsets.all(18.0),
+          child: ListView(
+            children: [
+              GestureDetector(
+                child: _createDataTable(),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ErrorImage()));
+                },
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(18.0),
+                child: Text(
+                  "Click the name of the student to do the attendance correctly.",
+                  style: TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -72,7 +88,6 @@ class ErrorAttendance extends StatelessWidget {
               color: Colors.red, fontSize: 17, fontWeight: FontWeight.normal),
         ))
       ]),
-      
     ];
   }
 }

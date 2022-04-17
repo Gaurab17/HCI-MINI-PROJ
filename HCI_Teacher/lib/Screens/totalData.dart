@@ -1,49 +1,66 @@
 import 'package:flutter/material.dart';
 import 'package:hciteacher/Screens/attendancedata.dart';
+import 'package:hciteacher/Support/const.dart';
 
 class TotalAttendanceDatas extends StatelessWidget {
-  const TotalAttendanceDatas({ Key? key }) : super(key: key);
+  const TotalAttendanceDatas({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('COMP 341-Chaitra'),
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: ListView(
-          children: [
-            GestureDetector(child: _createDataTable(),  onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const AttendanceData
-                    ()));
-              },),
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Container(
-                height: 3,
-                color: Colors.black,
+      body: Container(
+        color: background,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: ListView(
+            children: [
+              GestureDetector(
+                child: _createDataTable(),
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AttendanceData()));
+                },
               ),
-            ),
-            
-             const SizedBox(
-              height: 15,
-            ),
-            const Padding(
-              padding: EdgeInsets.all(18.0),
-              child: Text(
-                  "Click the date to see attendance history of that date.", style: TextStyle(
+              const SizedBox(
+                height: 5,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Container(
+                  height: 3,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              const Padding(
+                padding: EdgeInsets.all(18.0),
+                child: Text(
+                  "Click the date to see attendance history of that date.",
+                  style: TextStyle(
                     fontSize: 16,
-                  ),),
-            )
-           
-          ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
@@ -65,7 +82,6 @@ class TotalAttendanceDatas extends StatelessWidget {
         'Total Present/Total',
         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
       )),
-      
     ];
   }
 
@@ -77,7 +93,7 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
@@ -90,7 +106,7 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
@@ -103,7 +119,7 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
@@ -116,7 +132,7 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
@@ -129,7 +145,7 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
@@ -142,7 +158,7 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
@@ -155,14 +171,13 @@ class TotalAttendanceDatas extends StatelessWidget {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Padding(
-          padding: EdgeInsets.only(left:30.0),
+          padding: EdgeInsets.only(left: 30.0),
           child: Text(
             '4/6',
             style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
           ),
         )),
       ]),
-
     ];
   }
 }

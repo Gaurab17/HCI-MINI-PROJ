@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hciteacher/Support/const.dart';
 
 class AttendanceData extends StatefulWidget {
   const AttendanceData({Key? key}) : super(key: key);
@@ -13,36 +14,48 @@ class _AttendanceDataState extends State<AttendanceData> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('COMP 341-2078/12/03'),
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: ListView(
-          children: [
-            _createDataTable(),
-            const SizedBox(
-              height: 5,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Container(
+      body: Container(
+        color: background,
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: ListView(
+            children: [
+              _createDataTable(),
+              const SizedBox(
                 height: 5,
-                color: Colors.black,
               ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            const Center(
-                child: Text(
-              "Total: 3 present 3 absent",
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black87),
-            ))
-          ],
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                child: Container(
+                  height: 3,
+                  color: Colors.black,
+                ),
+              ),
+              const SizedBox(
+                height: 8,
+              ),
+              const Center(
+                  child: Text(
+                "Total: 2 present 4 absent",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black87),
+              ))
+            ],
+          ),
         ),
       ),
     );
@@ -84,7 +97,7 @@ class _AttendanceDataState extends State<AttendanceData> {
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.normal),
         )),
         DataCell(Text(
-          'error',
+          'absent',
           style: TextStyle(
               color: Colors.red, fontSize: 17, fontWeight: FontWeight.normal),
         ))

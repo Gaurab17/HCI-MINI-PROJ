@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hciteacher/Screens/absentdata.dart';
 import 'package:hciteacher/Screens/totalAbsent.dart';
 import 'package:hciteacher/Screens/totalData.dart';
 import 'package:hciteacher/Screens/totalIssues.dart';
@@ -22,30 +23,35 @@ class _FirstclassState extends State<Firstclass> {
       appBar: AppBar(
         title: const Text("COMP 341"),
         centerTitle: true,
-        backgroundColor: topColor,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/6.jpg"),
-            fit: BoxFit.cover,
-            opacity: 0.3,
-          ),
+          color: background,
         ),
         child: Column(
           children: [
             const SizedBox(
               height: 78,
             ),
-             Text(
+            Text(
               stop,
               style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 212, 50, 50)),
             ),
-             const SizedBox(
+            const SizedBox(
               height: 58,
             ),
             GestureDetector(
@@ -76,7 +82,7 @@ class _FirstclassState extends State<Firstclass> {
                       child: Column(
                         // ignore: prefer_const_literals_to_create_immutables
                         children: [
-                           Padding(
+                          Padding(
                             padding: const EdgeInsets.only(bottom: 8.0),
                             child: Text(
                               attend,
@@ -94,16 +100,19 @@ class _FirstclassState extends State<Firstclass> {
                 onTap: () {
                   isChanged = !isChanged;
                   setState(() {
-                    isChanged == true ? attend = "Start Attendance" : attend = "Stop Attendance";
-                    isChanged == true ? stop = 'The Class is being run' : stop = "Time Left : 1Hr 45 mins";
+                    isChanged == true
+                        ? attend = "Start Attendance"
+                        : attend = "Stop Attendance";
+                    isChanged == true
+                        ? stop = 'The Class is being run'
+                        : stop = "Time Left : 1Hr 45 mins";
                   });
-                  if(isChanged){
-                    Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const TotalInformation()));
-                  }else{
-                    
-                  }
-                  
+                  if (isChanged) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const TotalInformation()));
+                  } else {}
                 }),
             const SizedBox(
               height: 38,
@@ -139,7 +148,7 @@ class _FirstclassState extends State<Firstclass> {
                           const Padding(
                             padding: EdgeInsets.only(bottom: 8.0),
                             child: Text(
-                              "Absent Data",
+                              "Absent Information",
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.bold,
@@ -153,7 +162,7 @@ class _FirstclassState extends State<Firstclass> {
                 ),
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => const TotalAbsentData()));
+                      MaterialPageRoute(builder: (context) => const History()));
                 }),
             const SizedBox(
               height: 38,
