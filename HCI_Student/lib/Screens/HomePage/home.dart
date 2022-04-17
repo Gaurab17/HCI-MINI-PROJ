@@ -8,6 +8,7 @@ import 'package:hciminiproj/Screens/HomePage/noLiveclass.dart';
 import 'package:hciminiproj/Screens/HomePage/total%20_attendancedata.dart';
 import 'package:hciminiproj/Screens/Routine/routine.dart';
 import 'package:hciminiproj/Screens/SuppportUI/help.dart';
+import 'package:hciminiproj/services/const.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -22,13 +23,24 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: background,
       appBar: AppBar(
         title: const Text("Welcome to Smart Attendance System"),
         centerTitle: true,
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         elevation: 0.0,
       ),
       drawer: Drawer(
+        backgroundColor: background,
         child: ListView(
           children: [
             const Padding(
@@ -37,8 +49,13 @@ class _HomeState extends State<Home> {
                 accountName: Text('Gaurab Shrestha'),
                 accountEmail: Text('gaurabstha001@gmail.com'),
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 5, 197, 178),
-                ),
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: <Color>[
+                      Color.fromARGB(255, 12, 80, 48),
+                      Color.fromARGB(255, 33, 243, 201)
+                    ])),
                 currentAccountPicture: Center(
                   child: CircleAvatar(
                     radius: 50.0,
@@ -105,150 +122,86 @@ class _HomeState extends State<Home> {
       body: Container(
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/2.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
+            gradient: LinearGradient(
+                begin: Alignment.bottomRight,
+                end: Alignment.topLeft,
+                colors: <Color>[
+              Color.fromARGB(255, 226, 223, 223),
+              Color.fromARGB(155, 230, 226, 226),
+            ])),
         child: Column(
           children: [
-            Row(
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16, top: 30),
-                  child: GestureDetector(
-                      child: Container(
-                        decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(12),
-                          ),
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            opacity: 0.2,
-                            image: AssetImage("assets/images/1.jpg"),
-                          ),
-                          boxShadow: [
-                            //background color of box
-                            BoxShadow(
-                              color: Color.fromARGB(255, 188, 177, 176),
-                              blurRadius: 10.0, // soften the shadow
-                              spreadRadius: 1.0, //extend the shadow
-                              offset: Offset(
-                                0.0, // Move to right 10  horizontally
-                                0.0, // Move to bottom 10 Vertically
-                              ),
-                            )
-                          ],
-                        ),
-                        height: MediaQuery.of(context).size.height / 5,
-                        width: MediaQuery.of(context).size.width / 2.3,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 40),
-                          child: Column(
-                            // ignore: prefer_const_literals_to_create_immutables
+            Padding(
+              padding: const EdgeInsets.only(left: 16.0, right: 16, top: 24),
+              child: GestureDetector(
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      color: Color.fromARGB(255, 75, 183, 104),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(12),
+                      ),
+                    ),
+                    height: MediaQuery.of(context).size.height / 7,
+                    width: MediaQuery.of(context).size.width / 1.1,
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 20),
+                      child: Column(
+                        // ignore: prefer_const_literals_to_create_immutables
+                        children: [
+                          Row(
                             children: [
-                              const Padding(
-                                padding: EdgeInsets.only(bottom: 8.0),
-                                child: Text(
-                                  "COMP 341",
-                                  style: TextStyle(
-                                      fontSize: 22,
-                                      fontWeight: FontWeight.bold,
-                                      color: Color.fromARGB(221, 83, 75, 75)),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 40.0),
+                                child: Column(
+                                  children: const [
+                                    Icon(
+                                      Icons.live_tv_rounded,
+                                      size: 30,
+                                      color: Color.fromARGB(255, 51, 51, 51),
+                                    ),
+                                    SizedBox(
+                                      height: 2,
+                                    ),
+                                    Text(
+                                      "Live",
+                                      style: TextStyle(
+                                          color: Color.fromARGB(
+                                              255, 210, 237, 242),
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              // const Icon(Icons.class__rounded,
-                              //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
                               const SizedBox(
-                                height: 14,
+                                width: 40,
                               ),
-                              const Text(
-                                "Dr. Susil Shrestha",
-                                style: TextStyle(
-                                    color: Color.fromARGB(221, 73, 72, 72),
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.bold),
+                              Column(
+                                children: const [
+                                  Text(
+                                    "COMP 341",
+                                    style: TextStyle(
+                                        fontSize: 22,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                  // const Icon(Icons.class__rounded,
+                                  //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
+                                  SizedBox(
+                                    height: 6,
+                                  ),
+                                  Text(
+                                    "Dr. Susil Shrestha",
+                                    style: TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
                               ),
-                              const SizedBox(
-                                height: 10,
-                              ),
-                              const Text(
-                                "Happening now",
-                                style: TextStyle(
-                                    color: Color.fromARGB(221, 43, 202, 122),
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.bold),
-                              )
                             ],
                           ),
-                        ),
-                      ),
-                      onTap: () {
-                        
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Selectedclass()));
-                        }
-                      ),
-                ),
-                GestureDetector(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 30.0),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(12),
-                          ),
-                          image: DecorationImage(
-                            fit: BoxFit.fill,
-                            opacity: 0.2,
-                            image: AssetImage("assets/images/3.jpg"),
-                          ),
-                          boxShadow: [
-                            //background color of box
-                            BoxShadow(
-                              color: Color.fromARGB(255, 188, 177, 176),
-                              blurRadius: 10.0, // soften the shadow
-                              spreadRadius: 1.0, //extend the shadow
-                              offset: Offset(
-                                0.0, // Move to right 10  horizontally
-                                0.0, // Move to bottom 10 Vertically
-                              ),
-                            )
-                          ]),
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 40),
-                        child: Column(
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text(
-                                "COMP 342",
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(221, 83, 75, 75)),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 14,
-                            ),
-                            const Text(
-                              "Mr. Dhiraj Shrestha",
-                              style: TextStyle(
-                                  color: Color.fromARGB(221, 73, 72, 72),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
+                        ],
                       ),
                     ),
                   ),
@@ -256,155 +209,216 @@ class _HomeState extends State<Home> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const NoLiveClass()));
-                  },
-                ),
-              ],
+                            builder: (context) => const Selectedclass()));
+                  }),
             ),
             const SizedBox(
-              height: 20,
+              height: 16,
             ),
-            Row(
-              children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.only(left: 16.0, right: 16, top: 20),
-                  child: GestureDetector(
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(12),
-                        ),
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          opacity: 0.2,
-                          image: AssetImage("assets/images/4.jpg"),
-                        ),
-                        boxShadow: [
-                          //background color of box
-                          BoxShadow(
-                            color: Color.fromARGB(255, 188, 177, 176),
-                            blurRadius: 10.0, // soften the shadow
-                            spreadRadius: 1.0, //extend the shadow
-                            offset: Offset(
-                              0.0, // Move to right 10  horizontally
-                              0.0, // Move to bottom 10 Vertically
-                            ),
-                          )
-                        ],
-                      ),
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 40),
-                        child: Column(
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text(
-                                "COMP 314",
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(221, 83, 75, 75)),
-                              ),
-                            ),
-                            // const Icon(Icons.class__rounded,
-                            //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
-                            const SizedBox(
-                              height: 14,
-                            ),
-                            const Text(
-                              "Dr. Rajani Chulyadyo",
-                              style: TextStyle(
-                                  color: Color.fromARGB(221, 73, 72, 72),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            )
-                          ],
+            GestureDetector(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 126, 223, 191),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                  boxShadow: [],
+                ),
+                height: MediaQuery.of(context).size.height / 7,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          "COMP 314",
+                          style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: textColor),
                         ),
                       ),
-                    ),
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const NoLiveClass()));
-                    },
+                      // const Icon(Icons.class__rounded,
+                      //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const Text(
+                        "Dr. Rajani Chulyadyo",
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
                   ),
                 ),
-                GestureDetector(
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: Container(
-                      decoration: const BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(12),
-                        ),
-                        image: DecorationImage(
-                          fit: BoxFit.fill,
-                          opacity: 0.2,
-                          image: AssetImage("assets/images/5.jpg"),
-                        ),
-                        boxShadow: [
-                          //background color of box
-                          BoxShadow(
-                            color: Color.fromARGB(255, 188, 177, 176),
-                            blurRadius: 10.0, // soften the shadow
-                            spreadRadius: 1.0, //extend the shadow
-                            offset: Offset(
-                              0.0, // Move to right 10  horizontally
-                              0.0, // Move to bottom 10 Vertically
-                            ),
-                          )
-                        ],
-                      ),
-                      height: MediaQuery.of(context).size.height / 5,
-                      width: MediaQuery.of(context).size.width / 2.3,
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 40),
-                        child: Column(
-                          // ignore: prefer_const_literals_to_create_immutables
-                          children: [
-                            const Padding(
-                              padding: EdgeInsets.only(bottom: 8.0),
-                              child: Text(
-                                "COMP 306",
-                                style: TextStyle(
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(221, 83, 75, 75)),
-                              ),
-                            ),
-                            const SizedBox(
-                              height: 14,
-                            ),
-                            const Text(
-                              "Mr. Amrit Dahal",
-                              style: TextStyle(
-                                  color: Color.fromARGB(221, 73, 72, 72),
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.bold),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  onTap: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const NoLiveClass()));
-                  },
-                ),
-              ],
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NoLiveClass()));
+              },
             ),
             const SizedBox(
-              height: 20,
+              height: 16,
+            ),
+            GestureDetector(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 126, 223, 191),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                  boxShadow: [],
+                ),
+                height: MediaQuery.of(context).size.height / 7,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          "COMP 314",
+                          style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: textColor),
+                        ),
+                      ),
+                      // const Icon(Icons.class__rounded,
+                      //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const Text(
+                        "Dr. Rajani Chulyadyo",
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NoLiveClass()));
+              },
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            GestureDetector(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 126, 223, 191),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                  boxShadow: [],
+                ),
+                height: MediaQuery.of(context).size.height / 7,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          "COMP 314",
+                          style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: textColor),
+                        ),
+                      ),
+                      // const Icon(Icons.class__rounded,
+                      //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const Text(
+                        "Dr. Rajani Chulyadyo",
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NoLiveClass()));
+              },
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            GestureDetector(
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: Color.fromARGB(255, 126, 223, 191),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(12),
+                  ),
+                  boxShadow: [],
+                ),
+                height: MediaQuery.of(context).size.height / 7,
+                width: MediaQuery.of(context).size.width / 1.1,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Column(
+                    // ignore: prefer_const_literals_to_create_immutables
+                    children: [
+                      const Padding(
+                        padding: EdgeInsets.only(bottom: 8.0),
+                        child: Text(
+                          "COMP 314",
+                          style: TextStyle(
+                              fontSize: 22,
+                              fontWeight: FontWeight.bold,
+                              color: textColor),
+                        ),
+                      ),
+                      // const Icon(Icons.class__rounded,
+                      //     size: 40, color: Color.fromARGB(255, 8, 46, 113)),
+                      const SizedBox(
+                        height: 8,
+                      ),
+                      const Text(
+                        "Dr. Rajani Chulyadyo",
+                        style: TextStyle(
+                            color: textColor,
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const NoLiveClass()));
+              },
             ),
           ],
         ),

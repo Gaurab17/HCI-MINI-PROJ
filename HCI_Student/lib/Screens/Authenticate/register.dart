@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/home.dart';
 import 'package:hciminiproj/Screens/Authenticate/login.dart';
+import 'package:hciminiproj/services/const.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({Key? key}) : super(key: key);
@@ -8,7 +9,7 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: background,
       body: SingleChildScrollView(
         child: Form(
           child: Column(
@@ -84,7 +85,7 @@ class SignUp extends StatelessWidget {
                           color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: const Color.fromARGB(255, 9, 162, 144),
+                      primary: buttonColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
@@ -111,7 +112,7 @@ class SignUp extends StatelessWidget {
                   style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 8, 144, 60)),
+                      color: Color.fromARGB(255, 63, 164, 205)),
                 ),
                 onTap: () {
                   Navigator.push(context,

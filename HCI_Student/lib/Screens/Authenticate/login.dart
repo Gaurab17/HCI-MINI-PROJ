@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/home.dart';
 import 'package:hciminiproj/Screens/Authenticate/register.dart';
+import 'package:hciminiproj/services/const.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: background,
       body: SingleChildScrollView(
         child: Form(
           child: Column(
@@ -89,11 +90,11 @@ class _SignInState extends State<SignIn> {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w900,
-                          color: Color.fromARGB(255, 8, 144, 60)),
+                          color: Color.fromARGB(255, 63, 164, 205)),
                     ),
                   ),
                   onTap: () {}),
-              const SizedBox(height: 18),
+              const SizedBox(height: 8),
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: SizedBox(
@@ -121,7 +122,7 @@ class _SignInState extends State<SignIn> {
                           color: Colors.white),
                     ),
                     style: ElevatedButton.styleFrom(
-                      primary: const Color.fromARGB(255, 9, 162, 144),
+                      primary: buttonColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(16.0),
                       ),
@@ -129,13 +130,7 @@ class _SignInState extends State<SignIn> {
                   ),
                 ),
               ),
-              const SizedBox(
-                height: 4,
-              ),
               Text(error, style: const TextStyle(color: Colors.red)),
-              const SizedBox(
-                height: 4,
-              ),
               const Text(
                 "Doesn't have an account?",
                 style: TextStyle(
@@ -154,7 +149,7 @@ class _SignInState extends State<SignIn> {
                   style: const TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 8, 144, 60)),
+                      color: Color.fromARGB(255, 63, 164, 205)),
                 ),
                 onTap: () {
                   Navigator.push(context,

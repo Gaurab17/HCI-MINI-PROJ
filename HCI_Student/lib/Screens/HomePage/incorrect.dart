@@ -1,11 +1,9 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/home.dart';
 import 'package:hciminiproj/services/const.dart';
 
-class AttendanceReport extends StatelessWidget {
-  const AttendanceReport({Key? key}) : super(key: key);
+class IncorrectFace extends StatelessWidget {
+  const IncorrectFace({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +29,7 @@ class AttendanceReport extends StatelessWidget {
           children: [
             Center(
               child: Image.asset(
-                'assets/images/detected.jpg',
+                'assets/images/nodetect.jpg',
                 height: 350,
                 width: 350,
               ),
@@ -40,11 +38,9 @@ class AttendanceReport extends StatelessWidget {
               height: 10,
             ),
             const Text(
-              "Attendance Success",
+              "Attendance Unsuccess",
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: buttonColor),
+                  fontSize: 20, fontWeight: FontWeight.bold, color: Colors.red),
             ),
             const SizedBox(
               height: 20,

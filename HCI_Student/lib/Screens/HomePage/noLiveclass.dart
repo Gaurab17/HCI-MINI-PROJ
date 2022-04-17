@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/attendancehistory.dart';
+import 'package:hciminiproj/services/const.dart';
 
 class NoLiveClass extends StatelessWidget {
   const NoLiveClass({Key? key}) : super(key: key);
@@ -11,11 +12,20 @@ class NoLiveClass extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("COMP 314"),
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         centerTitle: true,
       ),
       body: Container(
-        color: Colors.white,
+        color: background,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         // ignore: prefer_const_literals_to_create_immutables
@@ -26,27 +36,27 @@ class NoLiveClass extends StatelessWidget {
           Container(
             height: 65,
             width: MediaQuery.of(context).size.width / 1.2,
-            color: Colors.white,
+            color: background,
             child: const Center(
               child: Text(
                 "Algorithm And Complexity COMP 314",
                 style: TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
-                    color: Colors.black),
+                    color: textColor),
               ),
             ),
           ),
           Container(
             height: 30,
             width: MediaQuery.of(context).size.width / 1.2,
-            color: Colors.white,
+            color: background,
             child: const Text(
               "-By Rajani Chulyadyo",
               style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 20,
                   fontWeight: FontWeight.normal,
-                  color: Colors.black),
+                  color: textColor),
             ),
           ),
           const SizedBox(
@@ -76,17 +86,17 @@ class NoLiveClass extends StatelessWidget {
                 )
               ],
             ),
-            height: MediaQuery.of(context).size.height / 3.5,
+            height: MediaQuery.of(context).size.height / 4,
             width: MediaQuery.of(context).size.width / 1.2,
             child: const Padding(
               padding: EdgeInsets.all(50.0),
               child: Text(
                 "No Live Class Detected. Please try again at the class hour",
                 style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: Colors.red),
-                textAlign: TextAlign.center,
+                textAlign: TextAlign.justify,
               ),
             ),
           ),
@@ -98,7 +108,7 @@ class NoLiveClass extends StatelessWidget {
           ),
           ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: const Color.fromARGB(255, 9, 162, 144),
+                primary: buttonColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(16.0),
                 ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/home.dart';
 import 'package:hciminiproj/Screens/SuppportUI/dropdown.dart';
+import 'package:hciminiproj/services/const.dart';
 
 class Absence extends StatelessWidget {
   const Absence({Key? key}) : super(key: key);
@@ -10,17 +11,21 @@ class Absence extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Leave Application"),
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         centerTitle: true,
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage("assets/images/6.jpg"),
-            fit: BoxFit.cover,
-          ),
-        ),
+        color: background,
         child: Column(
           children: [
             const SizedBox(
@@ -58,13 +63,12 @@ class Absence extends StatelessWidget {
                     borderRadius: BorderRadius.circular(16.0),
                   ),
                 ),
-                
                 onPressed: () {
                   final snackBar = SnackBar(
                     backgroundColor: const Color.fromARGB(255, 15, 215, 122),
                     content: const Padding(
-                      padding:  EdgeInsets.only(left:60.0),
-                      child:  Text(
+                      padding: EdgeInsets.only(left: 60.0),
+                      child: Text(
                         'Application Sent',
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -73,20 +77,16 @@ class Absence extends StatelessWidget {
                             color: Color.fromARGB(255, 255, 255, 255)),
                       ),
                     ),
-                    duration: const Duration(milliseconds: 1000), 
+                    duration: const Duration(milliseconds: 1000),
                     action: SnackBarAction(
                       label: '',
-                      onPressed: () {
-                         
-                      },
+                      onPressed: () {},
                     ),
                   );
                   ScaffoldMessenger.of(context).showSnackBar(snackBar);
-            
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const Home()));
+
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Home()));
                 },
                 child: const Text("Send Message"))
           ],

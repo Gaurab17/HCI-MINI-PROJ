@@ -8,7 +8,16 @@ class Help extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Help"),
-          backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: <Color>[
+                  Color.fromARGB(255, 23, 101, 65),
+                  Colors.blue
+                ])),
+          ),
           centerTitle: true,
         ),
         body: Padding(

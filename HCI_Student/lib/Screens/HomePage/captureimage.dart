@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hciminiproj/Screens/HomePage/AttendanceReport.dart';
+import 'package:hciminiproj/Screens/HomePage/incorrect.dart';
+import 'package:hciminiproj/services/const.dart';
 
 class CaptureImage extends StatefulWidget {
   const CaptureImage({Key? key}) : super(key: key);
@@ -17,100 +19,92 @@ class _CaptureImageState extends State<CaptureImage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("COMP 341"),
-        backgroundColor: const Color.fromARGB(255, 6, 200, 142),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                Color.fromARGB(255, 23, 101, 65),
+                Colors.blue
+              ])),
+        ),
         centerTitle: true,
       ),
-      body: Column(children: [
-        const SizedBox(
-          height: 80,
-        ),
-        Center(
-          child: Image.asset(
-            'assets/images/scanner.gif',
-            height: 300,
-            width: 300,
+      body: Container(
+        color: background,
+        child: Column(children: [
+          const SizedBox(
+            height: 80,
           ),
-        ),
-        const SizedBox(
-          height: 30,
-        ),
-        Padding(
-          padding: const EdgeInsets.only(left: 16.0),
-          child: Container(
-            height: 50,
-            color: Colors.white,
-            child: ListView(
-              children: [
-                SwitchListTile(
-                    title: const Text(
-                      "Toggle for correct face detection",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.black87),
-                    ),
-                    activeColor: Colors.teal,
-                    activeTrackColor: Colors.green,
-                    value: imageCapture,
-                    onChanged: (value) {
-                      setState(() {
-                        imageCapture = value;
-                      });
-                    }),
-              ],
+          Center(
+            child: Image.asset(
+              'assets/images/scanner.gif',
+              height: 300,
+              width: 300,
             ),
           ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        ElevatedButton(
-            style: ElevatedButton.styleFrom(
-              primary: const Color.fromARGB(255, 9, 162, 144),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(16.0),
-              ),
-            ),
-            onPressed: () {
-              if (imageCapture) {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const AttendanceReport()));
-              } else {
-                final snackBar = SnackBar(
-                  backgroundColor: Colors.red,
-                  content: SizedBox(
-                      height: 40.0,
-                        child:Padding(
-                      padding:  const EdgeInsets.only(left:60.0),
-                      child:  Text(
-                        'Face Attendance Error, Emailed at : $timeStamp',
-                        textAlign: TextAlign.center,
-                        style: const TextStyle(
-                            fontSize: 16,
+          const SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30.0),
+            child: Container(
+              height: 50,
+              color: background,
+              child: ListView(
+                children: [
+                  SwitchListTile(
+                      title: const Text(
+                        "Toggle for correct face detection",
+                        style: TextStyle(
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 255, 255, 255)),
+                            color: Color.fromARGB(221, 107, 105, 105)),
                       ),
-                    ),),
-                  
-            
-                  duration: const Duration(milliseconds: 1500),
-                  action: SnackBarAction(
-                    label: '',
-                    onPressed: () {},
-                  ),
-                );
-                ScaffoldMessenger.of(context).showSnackBar(snackBar);
-              }
-            },
-            child: const Text(
-              "Present",
-              style: TextStyle(
-                fontSize: 24,
+                      activeColor: Colors.teal,
+                      activeTrackColor: Colors.green,
+                      value: imageCapture,
+                      onChanged: (value) {
+                        setState(() {
+                          imageCapture = value;
+                        });
+                      }),
+                ],
               ),
-            )),
-      ]),
+            ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: buttonColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+              ),
+              onPressed: () {
+                if (imageCapture) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const AttendanceReport()));
+                } else {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const IncorrectFace()));
+                }
+              },
+              child: const Text(
+                "Present",
+                style: TextStyle(
+                  fontSize: 24,
+                ),
+              )),
+        ]),
+      ),
     );
   }
 }
